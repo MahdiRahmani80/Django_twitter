@@ -12,7 +12,7 @@ But with two conditions
 
 **1- At least 50 characters in that text should be**
 
-**2- After publishing each message, it should wait 6 minutes until the next message is published
+**2- After publishing each message, it should wait 6 minutes until the next message is published**
 
 For example, at 12 o'clock every night until 12:30, no one can leave a message and the message that gets the most likes per day is displayed.
 
