@@ -68,3 +68,10 @@ class Report(models.Model):
 
     def __str__(self):
         return "%s __ %s __ %s" %(self.name,self.blog,self.subject)
+
+
+class all_users_chat(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    text = models.TextField()
+    like = models.IntegerField(default=0)
+    date = models.DateTimeField(default=datetime.datetime.now())

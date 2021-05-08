@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User, Blog, Chat ,Report, followers,following
+from .models import User, Blog, Chat ,Report, followers,following,all_users_chat
 
 class userAdmin(admin.ModelAdmin):
     list_display = ('name','id','email','date','isVerified')
@@ -12,6 +12,9 @@ class chatAdmin(admin.ModelAdmin):
 
 class reportAdmin(admin.ModelAdmin):
     list_display = ('subject','name','blog','date')
+class all_users_chat_admin(admin.ModelAdmin):
+    list_display = ('user','like','date','id')
+
 
 admin.site.register(User,userAdmin)
 admin.site.register(Blog,blogAdmin)
@@ -19,3 +22,4 @@ admin.site.register(Chat,chatAdmin)
 admin.site.register(Report,reportAdmin)
 admin.site.register(followers)
 admin.site.register(following)
+admin.site.register(all_users_chat,all_users_chat_admin)
