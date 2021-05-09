@@ -1,3 +1,2 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import all_users_chat , User, Blog, Report, following,followers

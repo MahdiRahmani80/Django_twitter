@@ -1,5 +1,10 @@
 from django.db import models
 import datetime
+from datetime import timedelta
+
+from django.contrib.gis.db import models
+from django.utils import timezone
+
 
 class User(models.Model):
     name = models.CharField(max_length=100,unique=True)
@@ -74,4 +79,8 @@ class all_users_chat(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     text = models.TextField()
     like = models.IntegerField(default=0)
-    date = models.DateTimeField(default=datetime.datetime.now())
+    date = models.DateTimeField(default=timezone.now())
+
+
+    def __str__(self):
+        return "%s __ %s" %(self.user,self.date )
