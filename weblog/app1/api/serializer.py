@@ -1,4 +1,5 @@
-from app1.models import User,followers,following,Blog,Chat,Report,all_users_chat
+from app1.models import (User,followers,following,Blog,Chat,Report,
+                         all_users_chat, all_users_chat_message)
 from rest_framework import serializers
 
 
@@ -37,3 +38,9 @@ class all_chat_serializer(serializers.ModelSerializer):
     class Meta:
         model = all_users_chat
         fields = '__all__'
+
+class all_users_chat_message_serializer(serializers.ModelSerializer):
+    class Meta:
+        model = all_users_chat_message
+        fields = '__all__'
+    
